@@ -1,0 +1,18 @@
+{
+  "name": "three",
+  "version": "0.0.0",
+  "homepage": "https://asadalibest1.github.io/earth_orbit_threejs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "vite": "^2.3.0"
+  },
+  "dependencies": {
+    "three": "^0.128.0"
+  }
+}
