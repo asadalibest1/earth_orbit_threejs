@@ -11,6 +11,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 const canvas = document.querySelector('#bg');
 
+
 const renderer = new THREE.WebGLRenderer({
   canvas,
 });
@@ -79,9 +80,10 @@ scene.add(PointLightHelper);
 // helper 
 // const GridHelper = new THREE.GridHelper(50, 200);
 // scene.add(GridHelper);
+// console.log(renderer.domElement);
+const dom = document.getElementsByClassName('container')[0];
 
-
-const controls = new OrbitControls(camera, renderer.domElement);
+const controls = new OrbitControls(camera, dom);
 
 const animate = () => {
   requestAnimationFrame(animate)
@@ -95,6 +97,14 @@ const animate = () => {
   renderer.render(scene, camera)
 };
 
+
+// handling resizing
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.render(scene, camera)
+}, false);
 
 const addtstar = () => {
   const geometry = new THREE.SphereGeometry(.1, 200, 200);
