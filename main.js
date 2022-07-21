@@ -27,6 +27,11 @@ renderer.render(scene, camera);
 
 
 // earth .......
+const loader = new THREE.TextureLoader();
+const texture = loader.load('https://threejsfundamentals.org/threejs/resources/images/checker.png');
+
+
+
 const geometry = new THREE.SphereGeometry(.3, 100, 100);
 // const material = new THREE.MeshStandardMaterial({ color: 0xFF6347 });
 const material = new THREE.MeshPhongMaterial({
@@ -90,7 +95,7 @@ const animate = () => {
 
   // earth.rotation.x += 0.01;
   earth.rotation.y -= 0.002;
-  clouds.rotation.y -= 0.0005;
+  clouds.rotation.y -= 0.0001;
   // controls.update();
   // earth.rotation.z += 0.01;
 
